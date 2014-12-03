@@ -8,7 +8,7 @@
 
 #import "ImageViewController.h"
 
-@interface ImageViewController ()
+@interface ImageViewController ()<UIScrollViewDelegate>
 @property (nonatomic, strong)UIImageView *imageView;
 @property (nonatomic, strong)UIImage * image;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -26,6 +26,9 @@
 - (void)setScrollView:(UIScrollView *)scrollView
 {
     _scrollView = scrollView;
+    _scrollView.minimumZoomScale = 0.1;
+    _scrollView.delegate = self;
+    
     self.scrollView.contentSize = self.image? self.image.size : CGSizeZero;
 }
 
@@ -52,6 +55,15 @@
     _imageURL = imageURL;
 //    self.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:self.imageURL]]; // blocks main queue!
     [self startDownloadingImage];
+}
+
+#pragma mark - UIScrollViewDelegate
+
+// mandatory zooming method in UIScrollViewDelegate protocol
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return self.imageView;
 }
 
 #pragma mark - Multithreading
