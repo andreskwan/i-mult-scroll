@@ -46,11 +46,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lMy-Xe-Wvy">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lMy-Xe-Wvy">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="lMy-Xe-Wvy" secondAttribute="trailing" id="LHd-pp-eys"/>
+                            <constraint firstItem="lMy-Xe-Wvy" firstAttribute="top" secondItem="iD5-8v-agl" secondAttribute="top" id="MQp-PD-2tw"/>
+                            <constraint firstItem="lMy-Xe-Wvy" firstAttribute="leading" secondItem="iD5-8v-agl" secondAttribute="leading" id="SXQ-kt-Kb3"/>
+                            <constraint firstItem="lMy-Xe-Wvy" firstAttribute="bottom" secondItem="k7A-m5-INN" secondAttribute="top" id="kCx-59-vZq"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ozk-XI-09Z"/>
                     <connections>
