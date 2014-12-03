@@ -11,6 +11,7 @@
 @interface ImageViewController ()
 @property (nonatomic, strong)UIImageView *imageView;
 @property (nonatomic, strong)UIImage * image;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @end
 
 @implementation ImageViewController
@@ -18,13 +19,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.view addSubview:self.imageView];
+    [self.scrollView addSubview:self.imageView];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
- 
+#pragma mark - Propiedades
+- (void)setScrollView:(UIScrollView *)scrollView
+{
+    _scrollView = scrollView;
+    self.scrollView.contentSize = self.image? self.image.size : CGSizeZero;
 }
 
 - (UIImage *)image
@@ -36,6 +38,7 @@
 {
     self.imageView.image = image; // does not change the frame of the UIImageView
     [self.imageView sizeToFit];   // update the frame of the UIImageView
+    self.scrollView.contentSize = self.image? self.image.size : CGSizeZero;
 }
 
 - (UIImageView *)imageView
