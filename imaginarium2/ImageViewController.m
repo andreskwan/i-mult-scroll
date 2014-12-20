@@ -11,6 +11,7 @@
 @interface ImageViewController ()<UIScrollViewDelegate>
 @property (nonatomic, strong)UIImageView *imageView;
 @property (nonatomic, strong)UIImage * image;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @end
 
@@ -34,6 +35,7 @@
 
 - (UIImage *)image
 {
+    NSLog(@"self.imageView.image is nil? %@",self.imageView.image);
     return self.imageView.image;
 }
 
@@ -42,6 +44,7 @@
     self.imageView.image = image; // does not change the frame of the UIImageView
     [self.imageView sizeToFit];   // update the frame of the UIImageView
     self.scrollView.contentSize = self.image? self.image.size : CGSizeZero;
+    [self.spinner stopAnimating];
 }
 
 - (UIImageView *)imageView
@@ -69,6 +72,7 @@
 #pragma mark - Multithreading
 - (void)startDownloadingImage
 {
+    [self.spinner startAnimating];
     self.image = nil;
     
     if (self.imageURL) {

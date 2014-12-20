@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="hbN-Gq-OqK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="hbN-Gq-OqK">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -49,18 +49,25 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lMy-Xe-Wvy">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </scrollView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Fnn-NH-kui">
+                                <rect key="frame" x="141" y="266" width="37" height="37"/>
+                                <color key="color" red="0.48093326450000001" green="0.80971133390000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="lMy-Xe-Wvy" secondAttribute="trailing" id="LHd-pp-eys"/>
                             <constraint firstItem="lMy-Xe-Wvy" firstAttribute="top" secondItem="iD5-8v-agl" secondAttribute="top" id="MQp-PD-2tw"/>
                             <constraint firstItem="lMy-Xe-Wvy" firstAttribute="leading" secondItem="iD5-8v-agl" secondAttribute="leading" id="SXQ-kt-Kb3"/>
+                            <constraint firstAttribute="centerX" secondItem="Fnn-NH-kui" secondAttribute="centerX" id="TP6-gV-Pr7"/>
+                            <constraint firstAttribute="centerY" secondItem="Fnn-NH-kui" secondAttribute="centerY" id="YhW-be-eTW"/>
                             <constraint firstItem="lMy-Xe-Wvy" firstAttribute="bottom" secondItem="k7A-m5-INN" secondAttribute="top" id="kCx-59-vZq"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ozk-XI-09Z"/>
                     <connections>
                         <outlet property="scrollView" destination="lMy-Xe-Wvy" id="Ffw-qk-WNR"/>
+                        <outlet property="spinner" destination="Fnn-NH-kui" id="VQT-aK-kP0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bqX-aL-tz1" userLabel="First Responder" sceneMemberID="firstResponder"/>
