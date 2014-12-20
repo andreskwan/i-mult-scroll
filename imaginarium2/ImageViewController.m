@@ -11,6 +11,8 @@
 @interface ImageViewController ()<UIScrollViewDelegate>
 @property (nonatomic, strong)UIImageView *imageView;
 @property (nonatomic, strong)UIImage * image;
+@property (nonatomic, strong)UIImageView *logoView;
+@property (nonatomic, strong)UIImage * imageLogo;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @end
@@ -20,7 +22,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.view       addSubview:self.logoView];
     [self.scrollView addSubview:self.imageView];
+
 }
 
 #pragma mark - Propiedades
@@ -58,6 +62,15 @@
     _imageURL = imageURL;
 //    self.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:self.imageURL]]; // blocks main queue!
     [self startDownloadingImage];
+}
+
+- (UIImageView *)logoView
+{
+    UIImage * imgLogo = [UIImage imageNamed:@"stanford-logo"];
+    
+    if (!_logoView) _logoView = [[UIImageView alloc]initWithImage:imgLogo];
+    _logoView.frame = CGRectMake(0.0, 50.0, imgLogo.size.width/4, imgLogo.size.height/4);
+    return _logoView;
 }
 
 #pragma mark - UIScrollViewDelegate
