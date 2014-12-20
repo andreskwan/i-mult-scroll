@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="hbN-Gq-OqK">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,9 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6f-tW-SJW">
-                                <rect key="frame" x="137" y="269" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6f-tW-SJW">
+                                <rect key="frame" x="93" y="271" width="135" height="25"/>
+                                <state key="normal" title="Download Image">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -27,6 +28,12 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="X6f-tW-SJW" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="207" id="Ujo-ha-Azw"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="X6f-tW-SJW" secondAttribute="bottom" constant="272" id="eDr-yZ-l3g"/>
+                            <constraint firstItem="X6f-tW-SJW" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="77" id="hyj-yP-1MZ"/>
+                            <constraint firstItem="X6f-tW-SJW" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="i1k-Vx-Og4"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="iyG-t9-73S"/>
                 </viewController>
@@ -56,12 +63,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="lMy-Xe-Wvy" secondAttribute="trailing" id="LHd-pp-eys"/>
-                            <constraint firstItem="lMy-Xe-Wvy" firstAttribute="top" secondItem="iD5-8v-agl" secondAttribute="top" id="MQp-PD-2tw"/>
-                            <constraint firstItem="lMy-Xe-Wvy" firstAttribute="leading" secondItem="iD5-8v-agl" secondAttribute="leading" id="SXQ-kt-Kb3"/>
+                            <constraint firstItem="lMy-Xe-Wvy" firstAttribute="leading" secondItem="iD5-8v-agl" secondAttribute="leading" id="GL0-9u-W06"/>
                             <constraint firstAttribute="centerX" secondItem="Fnn-NH-kui" secondAttribute="centerX" id="TP6-gV-Pr7"/>
+                            <constraint firstItem="lMy-Xe-Wvy" firstAttribute="centerY" secondItem="Fnn-NH-kui" secondAttribute="centerY" id="Wh1-Xx-kJP"/>
                             <constraint firstAttribute="centerY" secondItem="Fnn-NH-kui" secondAttribute="centerY" id="YhW-be-eTW"/>
-                            <constraint firstItem="lMy-Xe-Wvy" firstAttribute="bottom" secondItem="k7A-m5-INN" secondAttribute="top" id="kCx-59-vZq"/>
+                            <constraint firstAttribute="trailing" secondItem="lMy-Xe-Wvy" secondAttribute="trailing" id="cwC-F3-GU9"/>
+                            <constraint firstItem="lMy-Xe-Wvy" firstAttribute="bottom" secondItem="k7A-m5-INN" secondAttribute="top" id="oQ1-Po-Dlj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ozk-XI-09Z"/>

@@ -22,8 +22,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.view       addSubview:self.logoView];
+    [self.view setBackgroundColor:[UIColor blackColor]];
     [self.scrollView addSubview:self.imageView];
+    [self.scrollView addSubview:self.logoView];
 
 }
 
@@ -67,9 +68,9 @@
 - (UIImageView *)logoView
 {
     UIImage * imgLogo = [UIImage imageNamed:@"stanford-logo"];
-    
     if (!_logoView) _logoView = [[UIImageView alloc]initWithImage:imgLogo];
-    _logoView.frame = CGRectMake(0.0, 50.0, imgLogo.size.width/4, imgLogo.size.height/4);
+    _logoView.frame  = CGRectMake(0.0, 0.0, imgLogo.size.width/4, imgLogo.size.height/4);
+    _logoView.center = CGPointMake(25.0, 35.0);
     return _logoView;
 }
 
